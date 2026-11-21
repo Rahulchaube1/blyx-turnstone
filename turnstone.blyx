@@ -1,0 +1,50 @@
+use chunkspan;
+use resumeindex;
+
+fn turnstone_finite(values: vector) -> bool {
+    let mut i = 0;
+    while i < len(values) {
+        let value = at(values, i);
+        if !(value - value == 0.0) {
+            return false;
+        }
+        i += 1;
+    }
+    true
+}
+
+fn turnstone_counts(values: vector) -> bool {
+    let mut i = 0;
+    while i < len(values) {
+        let value = at(values, i);
+        if !(value >= 0.0 && value <= 9007199254740991.0 && value % 1.0 == 0.0) {
+            return false;
+        }
+        i += 1;
+    }
+    true
+}
+
+fn turnstone_compute(size: f64, width: f64, checkpoints: vector) -> vector {
+    let first = chunkspan_bounds(size, width, 0.0);
+    if len(first) == 0 {
+        return [];
+    }
+    let progress = resumeindex_prefix(checkpoints, at(first, 2));
+    if len(progress) == 0 {
+        return [];
+    }
+    let chunk = chunkspan_bounds(size, width, at(progress, 0));
+    [at(chunk, 0), at(chunk, 1) - at(chunk, 0), at(chunk, 2) - at(progress, 0), at(progress, 1)]
+}
+
+// Resume a chunked file job from acknowledged checkpoints.
+// Returns [next offset, byte count, remaining chunks, replayed checkpoints]. Offsets use half-open ranges.
+pub fn turnstone_resume(size: f64, width: f64, checkpoints: vector) -> vector {
+    if !(size >= 0.0 && size <= 9007199254740991.0 && size % 1.0 == 0.0) { return []; }
+    if !(width >= 1.0 && width <= 9007199254740991.0 && width % 1.0 == 0.0) { return []; }
+    if !turnstone_counts(checkpoints) { return []; }
+    let result = turnstone_compute(size, width, checkpoints);
+    if !turnstone_finite(result) { return []; }
+    result
+}
