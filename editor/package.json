@@ -1,0 +1,57 @@
+{
+  "name": "blyx-turnstone",
+  "displayName": "Blyx Turnstone",
+  "description": "Resume a chunked file job from acknowledged checkpoints.",
+  "version": "0.1.0",
+  "publisher": "RahulChaube",
+  "license": "(MIT OR Apache-2.0)",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "blyx",
+    "turnstone",
+    "framework"
+  ],
+  "homepage": "https://www.blyx-lang.space/packages/turnstone",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rahulchaube1/blyx-turnstone.git",
+    "directory": "editor"
+  },
+  "bugs": {
+    "url": "https://github.com/Rahulchaube1/blyx-turnstone/issues"
+  },
+  "extensionDependencies": [
+    "RahulChaube.blyx-language"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "blyx",
+        "path": "./snippets/framework.json"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "turnstone.start",
+        "title": "Get started with Turnstone",
+        "description": "Resume a chunked file job from acknowledged checkpoints.",
+        "steps": [
+          {
+            "id": "run",
+            "title": "Run the Turnstone example",
+            "description": "Create an empty .blyx file, insert blyx-turnstone-demo and choose **Blyx: Run File**.\n[Open the documentation](https://www.blyx-lang.space/packages/turnstone)",
+            "media": {
+              "markdown": "walkthrough.md"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

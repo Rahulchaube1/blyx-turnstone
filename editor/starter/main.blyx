@@ -1,0 +1,14 @@
+use vendor::turnstone::turnstone;
+
+fn main() {
+    let size = 10.0;
+    let width = 4.0;
+    let checkpoints = [0, 0, 1];
+    let result = turnstone_resume(size, width, checkpoints);
+    if len(result) == 0 { println!("invalid"); return; }
+    let mut i = 0;
+    while i < len(result) {
+        println!(at(result, i));
+        i += 1;
+    }
+}

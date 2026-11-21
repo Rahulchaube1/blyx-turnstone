@@ -1,10 +1,14 @@
-<img src="assets/logo.png" width="112" height="112" alt="Turnstone logo">
+<img src="assets/logo.png" width="112" height="112" alt="A ruddy turnstone levers a pebble with its short wedge-shaped bill.">
 
 # Turnstone
 
 Resume a chunked file job from acknowledged checkpoints. This Blyx workflow framework is part of the command-line tools collection.
 
 A resumed batch can skip the final partial chunk when it treats a repeated acknowledgement as new progress. [Python, batching iterables](https://docs.python.org/3/library/itertools.html#itertools.batched)
+
+## Editor extension
+
+Install **RahulChaube.blyx-turnstone** to run the worked example and use the framework’s function completions in a Blyx file. Open an empty `.blyx` file, enter `blyx-turnstone-demo`, then choose **Blyx: Run File**. [Editor downloads](https://www.blyx-lang.space/packages/turnstone#editor) · [Download the extension](https://github.com/Rahulchaube1/blyxxxx/releases/download/framework-editors-v0.1.0/blyx-turnstone-0.1.0.vsix) · [Starter with framework source](https://github.com/Rahulchaube1/blyxxxx/releases/download/framework-editors-v0.1.0/blyx-turnstone-starter-0.1.0.zip)
 
 ## Install and run
 
@@ -82,7 +86,7 @@ This release includes identical copies of both library modules so a tagged clone
 
 ## Verification and contributions
 
-The regression suite in [tests.blyx](tests.blyx) checks the example, boundary cases and invalid inputs. Include a short reproducer and your compiler version in [an issue](https://github.com/Rahulchaube1/blyx-turnstone/issues). The source is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE). The package artwork uses [Lucide icons](https://lucide.dev/license); see [artwork notices](assets/NOTICE.txt).
+The regression suite in [tests.blyx](tests.blyx) checks the example, boundary cases and invalid inputs. Include a short reproducer and your compiler version in [an issue](https://github.com/Rahulchaube1/blyx-turnstone/issues). The source is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE). The [artwork notice](assets/NOTICE.txt) records credits for earlier editions.
 
 ## Connect with Rahul Chaube
 
